@@ -13,3 +13,23 @@ The CI/CD pipeline consists of the following components:
 4. Ansible: Handles configuration management and deployment automation.
 5. Kubernetes: Serves as the container orchestration platform for managing and scaling the deployed application.
 
+# Setting Up the Pipeline
+## Step 1: Configure GitHub
+- Push your application code to a GitHub repository.
+- Set up a webhook in GitHub to trigger Jenkins builds.
+## Step 2: Set Up Jenkins
+Install the following Jenkins plugins:
+- Git Plugin
+- Docker Plugin
+- Pipeline Plugin
+Create a Jenkins job:
+- Pull code from the GitHub repository.
+= Build the application and create a Docker image.
+- Push the Docker image to a registry.
+## Step 3: Integrate Ansible
+Write Ansible playbooks to:
+- Pull Docker images.
+- Deploy the application to Kubernetes or as standalone Docker containers.
+## Step 4: Deploy to Kubernetes
+Ensure your Kubernetes cluster is running and kubeconfig is properly set up.
+Use Ansible to apply Kubernetes manifests and manage deployments.
